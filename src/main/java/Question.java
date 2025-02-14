@@ -1,3 +1,5 @@
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.*;
 
 class Question {
@@ -33,7 +35,9 @@ class Question {
     public List<String> getQuestionAnswers() {
         List<String> questionAnswers = new ArrayList<>();
         for (String value : answers.values()) {
+            if(StringUtils.isNotBlank(value)) {
             questionAnswers.add(value);
+            }
         }
         return questionAnswers;
     }
